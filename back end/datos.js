@@ -1,4 +1,4 @@
-function CrearCuenta (FechaNacimiento, Usuario, Contraseña, Genero) {
+export function CrearCuenta () {
     let lista = ["Fran", "Roberto", "Wally", "Carlos"]
     for (let i = 0; i <= lista.length; i++) {
         let elemento = lista [i];
