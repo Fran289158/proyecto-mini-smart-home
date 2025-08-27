@@ -1,5 +1,5 @@
-import {readFileSync} from '/fs.js';
-import {CrearCuenta} from './datos.js';
+import fs from "fs";
 
-let contenidodearchivotxt = FileSystem.writeFileSync ("wtv.txt", "utf-8");
-console.log (contenidodearchivotxt);
+let cosaAleer = fs.readFileSync ("nombres.json", "utf-8");
+
+let convertirAarray = JSON.parse (cosaAleer);
