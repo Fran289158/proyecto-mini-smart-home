@@ -1,3 +1,3 @@
-//Importo librerías:
+//Importo librería File System:
 import fs from "fs";
-import SerialPort from 'serialport';
+
