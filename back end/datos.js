@@ -1,11 +1,12 @@
-export function CrearCuenta () {
-    let lista = ["Fran", "Roberto", "Wally", "Carlos"]
-    for (let i = 0; i <= lista.length; i++) {
-        let elemento = lista [i];
-        console.log (elemento);
-    }
-}
+//Importo librerías:
+import fs from "fs";
+import {SerialPort} from 'serialport';
 
-function LOGIN (Usuario, Contraseña) {
+function LOGIN () {
+    let leer = fs.readFileSync ("LOGIN.json", "utf-8");
 
+    let conversion = JSON.parse ("LOGIN.json", null, "\t");
+
+    
+    
 }
