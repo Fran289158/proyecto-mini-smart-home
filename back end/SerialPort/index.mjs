@@ -12,6 +12,6 @@ NuevoSerialPort.write ('Hola papi', function (err) {
     console.log ('recibido papi');
 })
 
-NuevoSerialPort.on ('error', function (err) {
+NuevoSerialPort.on('error', function (err) {
     console.log ('Error: ', err.message);
 })
