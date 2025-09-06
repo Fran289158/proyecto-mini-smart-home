@@ -1,1 +1,12 @@
+input{
+    display: flexbox;
+    flex-direction: column; 
+    width: 60%;
+    height: 25px;
+}
 
+.boton{
+    background-color: crimson;
+    width: 40%;
+    align-self: center;
+}
