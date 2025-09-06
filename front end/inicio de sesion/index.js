@@ -1,10 +1,11 @@
 let usuario = document.getElementById("dondevaelmail");
 let contraseña = document.getElementById("dondevalacontra");
 let boton = document.getElementById("iniciar");
+let mensajeLogin = document.getElementById("mensaje");
 
 function iniciosesion() {
-   const mail = usuario.value.trim();
-   const contra = contraseña.value.trim();
+    let mail = usuario.value;
+    let contra = contraseña.value;
  
    if (mail === "" || contra === "") {
      mensajeLogin.textContent = "Completá ambos campos";
