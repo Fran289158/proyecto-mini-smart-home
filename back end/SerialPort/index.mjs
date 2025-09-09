@@ -1,0 +1,2 @@
+export { SerialPort } from 'serialport';
+
