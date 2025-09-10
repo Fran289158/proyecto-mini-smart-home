@@ -1,13 +1,17 @@
+let form = document.getElementById("formregistro")
 let usuario = document.getElementById("dondevaelmail");
 let contraseña = document.getElementById("dondevalacontra");
 let boton = document.getElementById("registrate");
-let usuarios=[] 
-let contraseñas=[]
+
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+let contraseñas = JSON.parse(localStorage.getItem("contraseñas")) || [];
+
 
 function registrar(){
 
-  const mail = usuario.value;
-  const contra = contraseña.value;
+
+  const mail = usuario.value.trim();
+  const contra = contraseña.value.trim();
 
   if(mail==="" || contra === ""){
     mensaje.textContent = "Completar ambos campos";
@@ -24,10 +28,14 @@ function registrar(){
     usuarios.push(mail);
     contraseñas.push(contra);
     mensaje.textContent = ""
-    
-  console.log("Usuarios:", usuarios);
-  console.log("Contraseñas:", contraseñas);
   }
+
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  localStorage.setItem("contraseñas", JSON.stringify(contraseñas));
 }
 
-boton.addEventListener("click",registrar);
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+  registrar();
+});
