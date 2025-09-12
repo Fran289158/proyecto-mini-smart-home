@@ -1,25 +1,10 @@
 //Importo librería File System:
 import fs from "fs";
-//
-//
-function Registro () {
+import { SubscribeGETEvent, SubscribePOSTEvent, realTimeEvent, StartServer } from 'soquetic';
 
-   let data = JSON.parse (fs.readFileSync ("main.json", "utf-8"));
+//FRONT:
 
-   let objeto = {
-      nombre: "Damian",
-      contraseña: "Dami22930",
-      dia: "29",
-      mes: "Septiembre",
-      año: 1973
-   }
+// REGISTRO:
 
-   data.push(objeto);
-
-   let NuevoJSON = JSON.stringify(data, null, 4);
-
-   fs.writeFileSync("main.json", NuevoJSON, "utf-8");
-
-}
-
-Registro ();
+//HORA:
+SubscribePOSTEvent
