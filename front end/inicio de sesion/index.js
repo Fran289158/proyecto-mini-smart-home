@@ -4,12 +4,7 @@ let boton = document.getElementById("iniciar");
 let mensaje = document.getElementById("mensaje");
 let form = document.getElementById("loginform")
 
-if (!localStorage.getItem("usuarios")) {
-  let usuarios = ["juan@example.com"];
-  let contraseñas = ["1234"];
-  localStorage.setItem("usuarios", JSON.stringify(usuarios));
-  localStorage.setItem("contraseñas", JSON.stringify(contraseñas));
-}
+connect2Server();
 
 function iniciosesion(event) {
   event.preventDefault();
@@ -26,19 +21,13 @@ function iniciosesion(event) {
      return;
    }
  
-   let indice = -1;
+    postEvent("login", { email: mail, password: contra }, function (data) {
 
-   for (let i = 0; i < usuarios.length; i++) {
-    if (usuarios[i] === mail) {
-      indice = i;
-      break;}
-    }
-    
-   if (indice === -1) {
-     mensaje.textContent = "El usuario no existe";
-     mensaje.style.color = "red";
-     return;
-   }
+      if (!data.exists) { 
+        mensaje.textContent = "El usuario no existe";
+        mensaje.style.color = "red";
+        return;
+      }
  
    if (contraseñas[indice] !== contra) {
      mensaje.textContent = "Contraseña incorrecta";
@@ -49,8 +38,9 @@ function iniciosesion(event) {
    else{
     mensaje.textContent = "¡Inicio de sesión exitoso!";
     mensaje.style.color = "green";
-  } 
- localStorage.setItem("usuarioLogueado", mail);
+    localStorage.setItem("usuarioLogueado", mail);
+   } 
+  });
 }
 form.addEventListener("submit",iniciosesion);
 
