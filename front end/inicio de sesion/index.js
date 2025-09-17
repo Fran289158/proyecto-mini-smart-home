@@ -29,7 +29,7 @@ function iniciosesion(event) {
         return;
       }
  
-   if (contraseñas[indice] !== contra) {
+    if (!data.contraseñacorrecta) {
      mensaje.textContent = "Contraseña incorrecta";
      mensaje.style.color = "red";
      return;
