@@ -1,14 +1,5 @@
-:root{
-        /* Colores principales */
-    --lindo: #d986ff;
-    --fondo-barra: #2a1a13;
-    --fondo-hover: #5a3a28;
-    --texto: #ffffff;
-    --noticias: #58999b;
-      
-}
 body {
-    background: #3d2b23; /* marrón oscuro como la maqueta */
+    background: #9574ca; /* marrón oscuro como la maqueta */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -45,7 +36,7 @@ body {
     background-color: var(--tab-active);
     border-radius: 0 0 12px 12px;
     margin: 0 20px 20px 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(146, 45, 45, 0.884);
   }
 
   .tab-content.active {
